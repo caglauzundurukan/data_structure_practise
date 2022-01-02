@@ -44,6 +44,31 @@ node * ekleSirali(node * r, int x) {
     temp->x = x;
     return r;
 }
+//delete element from linked list
+
+node * sil(node *r, int x){
+    node *temp;
+    node *iter = r;
+    
+    if(r->x == x){
+        temp = r;
+        r = r->next;
+        free(temp);
+        return r;
+    }
+    while (iter->next != NULL && iter->next->x != x) {
+        iter = iter->next;
+    }
+     if(iter->next == NULL){
+        printf("Sayi Bulunamadi");
+        return r;
+    }
+    temp = iter->next;
+    iter->next = iter->next->next;
+    free(temp);
+    return r;
+
+}
 
 int main(){
     node * root;
@@ -54,7 +79,7 @@ int main(){
     root = ekleSirali(root,450);
     root = ekleSirali(root,50);
     bastir(root);
-    
-    
+    root = sil(root, 50);
+    bastir(root);
     
 }

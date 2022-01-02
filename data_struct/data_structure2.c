@@ -42,8 +42,10 @@ int main(){
     }
   
     bastir(root);
+ 
+    //adding node between to linked list
     
-    node * iter = root;           //adding node between to linked list
+    node * iter = root;            
     for(i=0; i<3; i++)
         iter = iter->next;         
     node* temp = (node *)malloc(sizeof(node));

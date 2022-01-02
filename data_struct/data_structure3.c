@@ -44,6 +44,7 @@ node * ekleSirali(node * r, int x) {
     temp->x = x;
     return r;
 }
+
 //delete element from linked list
 
 node * sil(node *r, int x){
